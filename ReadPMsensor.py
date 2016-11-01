@@ -6,13 +6,20 @@ from struct import *
 
 # 打开串口
 print("Opening Serial Port...")
-ser = serial.Serial("/dev/ttyAMA0", 9600)
+ser = serial.Serial(
+    port = '/dev/ttyAMA0',
+    baudrate = 9600,
+    parity = serial.PARITY_NONE,
+    stopbits = serial.STOPBITS_ONE,
+    bytesize = serial.EIGHTBITS
+    )
 print("Done")
 try:
     cnt = 0
+    ser.open()
     while True:
         # 获得接收缓冲区字符
-        count =ser.inWaiting
+        count = ser.inWaiting()
         if count >= 24:
             # 读取内容并回显
             recv = ser.read(count)
