@@ -12,15 +12,11 @@ ser = serial.Serial(
     baudrate = 9600,
     parity = serial.PARITY_NONE,
     stopbits = serial.STOPBITS_ONE,
-    bytesize = serial.EIGHTBITS,
-    rtscts=True,
-    xtimes = 0,
-    inbuff = 0
+    bytesize = serial.EIGHTBITS
     )
 print("Done")
 try:
     cnt = 0
-
     while True:
         # 获得接收缓冲区字符
         count = ser.inWaiting()
