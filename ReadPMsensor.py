@@ -17,7 +17,7 @@ try:
             # 读取内容并回显
             recv = ser.read(count)
             cnt = cnt + 1
-            print()"[%d]Recieve Data" % cnt)
+            print("[%d]Recieve Data" % cnt)
             print(len(recv), "Bytes:")
             tmp = recv[4:16]
             datas = unpack('>hhhhhh', tmp)
