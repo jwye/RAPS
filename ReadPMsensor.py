@@ -5,7 +5,7 @@ import time
 from struct import *
 import sqlite3
 # 打开串口
-print "Opening Serial Port...",
+print "Opening Serial Port..."
 ser = serial.Serial("/dev/ttyAMA0", 9600)
 print "Done"
 def main():
