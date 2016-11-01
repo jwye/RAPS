@@ -1,5 +1,6 @@
 #ref form http://watchword.space/blog/?p=26
 #encoding=utf-8
+import sys
 import serial
 import time
 from struct import *
@@ -11,7 +12,8 @@ ser = serial.Serial(
     baudrate = 9600,
     parity = serial.PARITY_NONE,
     stopbits = serial.STOPBITS_ONE,
-    bytesize = serial.EIGHTBITS
+    bytesize = serial.EIGHTBITS,
+    rtscts=True
     )
 print("Done")
 try:
