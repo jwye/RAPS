@@ -7,7 +7,7 @@ from struct import *
 # 打开串口
 print("Opening Serial Port...")
 ser = serial.Serial(
-    port = '/dev/ttyAMA0',
+    port ='/dev/ttyAMA0',
     baudrate = 9600,
     parity = serial.PARITY_NONE,
     stopbits = serial.STOPBITS_ONE,
@@ -16,7 +16,7 @@ ser = serial.Serial(
 print("Done")
 try:
     cnt = 0
-    ser.open()
+
     while True:
         # 获得接收缓冲区字符
         count = ser.inWaiting()
