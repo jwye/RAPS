@@ -4,6 +4,7 @@ import sys
 import serial
 import time
 from struct import *
+import RPi.GPIO as GPIO
 
 # 打开串口
 print("Opening Serial Port...")
@@ -15,6 +16,15 @@ ser = serial.Serial(
     bytesize = serial.EIGHTBITS
     )
 print("Done")
+
+print("SET PIN18 HIGH")
+pin = 18 # 11管脚对于的BCM管脚号码
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pin, GPIO.OUT) #写
+GPIO.output(pin, GPIO.HIGH) #工作
+#GPIO.output(pin, GPIO.LOW) #休息
+print("Done")
+
 try:
     cnt = 0
     while True:
