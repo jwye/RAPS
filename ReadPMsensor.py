@@ -29,7 +29,7 @@ try:
     cnt = 0
     while True:
         # 获得接收缓冲区字符
-        count = ser.in_waiting()
+        count = ser.inwaiting()
         if count >= 24:
             # 读取内容并回显
             recv = ser.read(count)
