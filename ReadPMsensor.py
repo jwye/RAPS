@@ -1,5 +1,5 @@
 #ref form http://watchword.space/blog/?p=26
-#sudo vim /boot/cmdline.txt  del. console=serial0,115200 
+#sudo vim /boot/cmdline.txt  del. console=serial0,115200
 #encoding=utf-8
 import sys
 import serial
@@ -14,10 +14,7 @@ ser = serial.Serial(
     baudrate = 9600,
     parity = serial.PARITY_NONE,
     stopbits = serial.STOPBITS_ONE,
-    bytesize = serial.EIGHTBITS,
-    rtscts = 0,
-    dsrdtr = 0,
-    xonxoff =0
+    bytesize = serial.EIGHTBITS
     )
 print("Done")
 
