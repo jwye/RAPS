@@ -24,6 +24,7 @@ GPIO.setup(pin, GPIO.OUT) #写
 GPIO.output(pin, GPIO.HIGH) #工作
 #GPIO.output(pin, GPIO.LOW) #休息
 print("Done")
+print(ser.inWaiting)
 
 try:
     cnt = 0
