@@ -35,13 +35,14 @@ def main():
         if count >= 24:
             # read from buf
             recv = ser.read(count)
+            print(recv)
             cnt = cnt + 1
             print("[%d]Recieve Data" % cnt)
             print(len(recv), "Bytes:")
             tmp = recv[4:16]
             datas = unpack('>hhhhhh', tmp)
             print(datas)
-            print("insert into pm_log ('pm1','pm2_5','pm10') values (%d,%d,%d)" % (datas[0], datas[1],datas[2]))
+            print("(pm1=%d,pm2_5=%d,pm10=%d)" % (datas[0], datas[1],datas[2]))
             #ser.write(recv)
             # clear buffer
             ser.flushInput()
