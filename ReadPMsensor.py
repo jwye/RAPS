@@ -7,7 +7,7 @@ import time
 from struct import *
 import RPi.GPIO as GPIO
 
-# 打开串口
+# open AMA0
 print("Opening Serial Port...")
 ser = serial.Serial(
     port ='/dev/ttyAMA0',
@@ -19,28 +19,28 @@ ser = serial.Serial(
 print("Done")
 
 print("SET PIN18 HIGH")
-pin = 18 # 11管脚对于的BCM管脚号码
+pin = 18 #
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.OUT) #写
-GPIO.output(pin, GPIO.HIGH) #工作
-#GPIO.output(pin, GPIO.LOW) #休息
+GPIO.setup(pin, GPIO.OUT) #
+GPIO.output(pin, GPIO.HIGH) #
+#GPIO.output(pin, GPIO.LOW) #
 print("Done")
 print(ser)
 
 try:
     cnt = 0
     while True:
-        # 清空接收缓冲区
+        # clear buffer
         print("flushInput")
         ser.flushInput()
         print("Done")
 
-        # 获得接收缓冲区字符
+        # get from buffer
         print("inWaiting")
         count = ser.inWaiting()
         print("Done")
         if count >= 24:
-            # 读取内容并回显
+            # read from buf
             recv = ser.read(count)
             cnt = cnt + 1
             print("[%d]Recieve Data" % cnt)
@@ -50,9 +50,9 @@ try:
             print(datas)
             print("insert into pm_log ('pm1','pm2_5','pm10') values (%d,%d,%d)" % (datas[0], datas[1],datas[2]))
             #ser.write(recv)
-            # 清空接收缓冲区
+            # clear buffer
             ser.flushInput()
-        # 必要的软件延时
+        # delay
         time.sleep(0.1)
 
 
