@@ -32,7 +32,7 @@ def main():
     while True:
         # get from buffer
         count = ser.inWaiting()
-        if count >= 24:
+        if count >= 48:
             # read from buf
             recv = ser.read(count)
             print(recv)
@@ -46,6 +46,8 @@ def main():
             #ser.write(recv)
             # clear buffer
             ser.flushInput()
+            print("Done")
+
         # delay
         time.sleep(0.1)
 
