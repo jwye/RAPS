@@ -10,7 +10,7 @@ import RPi.GPIO as GPIO
 # open AMA0
 print("Opening Serial Port...")
 ser = serial.Serial(
-    port ='/dev/ttyAMA0',
+    port ='/dev/ttyserial0',
     baudrate = 9600,
     parity = serial.PARITY_NONE,
     stopbits = 1,
