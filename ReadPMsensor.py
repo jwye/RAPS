@@ -18,11 +18,11 @@ ser = serial.Serial(
     )
 print("Done")
 
-print("SET PIN18 HIGH")
-pin = 18 #
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.OUT) #
-GPIO.output(pin, GPIO.HIGH) #
+#print("SET PIN18 HIGH")
+#pin = 18 #
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setup(pin, GPIO.OUT) #
+#GPIO.output(pin, GPIO.HIGH) #
 #GPIO.output(pin, GPIO.LOW) #
 print("Done")
 print(ser)
