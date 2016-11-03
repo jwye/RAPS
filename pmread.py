@@ -10,13 +10,13 @@ from struct import *
 import sqlite3
 # 打开串口
 print "Opening Serial Port...",
-ser = serial.Serial("/dev/ttyAMA0", 9600)
+ser = serial.Serial("/dev/ttyS0", 9600)
 print "Done"
 def main():
     cnt = 0
     conn = sqlite3.connect('pm25.db')
     c = conn.cursor()
-    while True:  
+    while True:
         # 获得接收缓冲区字符
         count = ser.inWaiting()
         if count >= 24:

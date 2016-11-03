@@ -4,7 +4,7 @@ import string
 import time
 
 # Raspberry Pi GPIO Serial Port settings
-rpiCOM = '/dev/ttyAMA0'
+rpiCOM = '/dev/ttyS0'
 baud = 9600
 xtimes = 0
 inbuff = 0
