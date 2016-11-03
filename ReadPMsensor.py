@@ -31,6 +31,7 @@ try:
     cnt = 0
     while True:
         # 获得接收缓冲区字符
+        ser.flushInput()
         count = ser.inWaiting()
         if count >= 24:
             # 读取内容并回显
