@@ -34,7 +34,7 @@ def main():
         recv = ser.read(count)
         print(count)
         print(recv)
-        ser.write("o")
+        ser.write(0x55)
         # delay
         time.sleep(0.1)
 
