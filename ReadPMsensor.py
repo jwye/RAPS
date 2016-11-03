@@ -26,18 +26,13 @@ print("Done")
 #GPIO.output(pin, GPIO.LOW) #
 print("Done")
 print(ser)
-# clear buffer
-print("flushInput")
-ser.flushInput()
-print("Done")
 
-try:
+def main():
     cnt = 0
     while True:
-
         # get from buffer
         count = ser.inWaiting()
-        if count >= 24:
+        if count >= 36:
             # read from buf
             recv = ser.read(count)
             cnt = cnt + 1
@@ -51,9 +46,11 @@ try:
             # clear buffer
             ser.flushInput()
         # delay
-        time.sleep(0.1)
+        time.sleep(1)
 
-
+if __name__ == '__main__':
+try:
+    main()
 except KeyboardInterrupt:
     if ser != None:
         ser.close()
