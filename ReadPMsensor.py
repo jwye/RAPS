@@ -25,14 +25,16 @@ print("Done")
 #GPIO.output(pin, GPIO.HIGH) #
 #GPIO.output(pin, GPIO.LOW) #
 print("Done")
-print(ser)
+# clear buffer
+ser.flushInput()
+#print(ser)
 
 def main():
     cnt = 0
     while True:
         # get from buffer
         count = ser.inWaiting()
-        if count >= 48:
+        if count >= 24:
             # read from buf
             recv = ser.read(count)
             print(recv)
