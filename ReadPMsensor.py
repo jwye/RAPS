@@ -30,9 +30,15 @@ print(ser)
 try:
     cnt = 0
     while True:
-        # 获得接收缓冲区字符
+        # 清空接收缓冲区
+        print("flushInput")
         ser.flushInput()
+        print("Done")
+
+        # 获得接收缓冲区字符
+        print("inWaiting")
         count = ser.inWaiting()
+        print("Done")
         if count >= 24:
             # 读取内容并回显
             recv = ser.read(count)
