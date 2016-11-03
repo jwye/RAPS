@@ -24,10 +24,11 @@ print("Done")
 #GPIO.setup(pin, GPIO.OUT) #
 #GPIO.output(pin, GPIO.HIGH) #
 #GPIO.output(pin, GPIO.LOW) #
-print("Done")
-# clear buffer
+#print("Done")
+
+print(ser)
+# delay
 ser.flushInput()
-#print(ser)
 
 def main():
     cnt = 0
