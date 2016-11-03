@@ -32,7 +32,7 @@ def main():
     while True:
         # get from buffer
         count = ser.inWaiting()
-        if count >= 36:
+        if count >= 24:
             # read from buf
             recv = ser.read(count)
             cnt = cnt + 1
