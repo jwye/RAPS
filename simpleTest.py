@@ -34,9 +34,9 @@ def main():
         recv = ser.read(count)
         print(count)
         print(recv)
-        ser.write([0x55])
+        ser.write([4, 9, 62, 144, 56, 30, 147, 3, 210, 89, 111, 78, 184, 151, 17, 129])
         # delay
-        time.sleep(0.1)
+    time.sleep(0.1)
 
 if __name__ == '__main__':
     try:
