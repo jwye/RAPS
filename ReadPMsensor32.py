@@ -35,7 +35,7 @@ def main():
     while True:
         # get from buffer
         count = ser.inWaiting()
-        if count >= 48:
+        if count >= 36:
             # read from buf
             recv = ser.read(count)
             print(recv)
