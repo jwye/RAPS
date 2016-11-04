@@ -35,7 +35,7 @@ def main():
     while True:
         # get from buffer
         count = ser.inWaiting()
-        if count >= 32:
+        if count >= 48:
             # read from buf
             recv = ser.read(count)
             print(recv)
@@ -49,7 +49,6 @@ def main():
              % (datas[0], datas[1],datas[2]))
             #ser.write(recv)
             tmp2 = recv
-            print(tmp2)
             datas2 = unpack('>\
             hhhhhhhhhhhhhhhhhhhh\
             hhhhhhhhhhhhhhhhhhhh\
