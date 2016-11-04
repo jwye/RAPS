@@ -48,7 +48,10 @@ def main():
             print("(pm1=%d,pm2_5=%d,pm10=%d)" % (datas[0], datas[1],datas[2]))
             #ser.write(recv)
             tmp2 = recv
-            datas2 = unpack('>hhhhhh', tmp2)
+            datas2 = unpack('>hhhh\
+            hhhhhhhhhhhhhhhhhhhh\
+            hhhhhhhhhhhhhhhhhhhh\
+            hhhhhhhhhhhhhhhhhhhh', tmp2)
             print(datas2)
             # clear buffer
             ser.flushInput()
