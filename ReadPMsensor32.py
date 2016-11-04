@@ -49,10 +49,8 @@ def main():
              % (datas[0], datas[1],datas[2]))
             #ser.write(recv)
             tmp2 = recv
-            datas2 = unpack('>\
-            hhhhhhhhhhhhhhhhhhhh\
-            hhhhhhhhhhhhhhhhhhhh\
-            hhhhhhhh', tmp2)
+            datas2 = unpack('>hh\
+            hhhhhhhhhh, tmp2)
             print(datas2)
             # clear buffer
             ser.flushInput()
