@@ -49,10 +49,10 @@ def main():
             #ser.write(recv)
             tmp2 = recv
             print(tmp2)
-            datas2 = unpack('>hhhh\
+            datas2 = unpack('>\
             hhhhhhhhhhhhhhhhhhhh\
             hhhhhhhhhhhhhhhhhhhh\
-            hhhhhhhhhhhhhhhhhhhh', tmp2)
+            hhhhhhhh', tmp2)
             print(datas2)
             # clear buffer
             ser.flushInput()
