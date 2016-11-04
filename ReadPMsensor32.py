@@ -35,17 +35,18 @@ def main():
     while True:
         # get from buffer
         count = ser.inWaiting()
-        if count >= 24:
+        if count >= 32:
             # read from buf
             recv = ser.read(count)
-            #print(recv)
+            print(recv)
             cnt = cnt + 1
             print("[%d]Recieve Data" % cnt)
             print(len(recv), "Bytes:")
             tmp = recv[4:16]
             datas = unpack('>hhhhhh', tmp)
             print(datas)
-            print("(pm1=%d,pm2_5=%d,pm10=%d)" % (datas[0], datas[1],datas[2]))
+            print("(pm1=%d,pm2_5=%d,pm10=%d)"\
+             % (datas[0], datas[1],datas[2]))
             #ser.write(recv)
             tmp2 = recv
             print(tmp2)
