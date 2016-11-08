@@ -1,14 +1,15 @@
 #ref form http://watchword.space/blog/?p=26
-#sudo vim /boot/cmdline.txt  del. console=serial0,115200
 #encoding=utf-8
+#
+
 import sys
 import serial
 import time
 from struct import *
 import RPi.GPIO as GPIO
-import pygame
 
-# open AMA0
+
+# open AMA0(no its old) ttyS0
 print("Opening Serial Port...")
 ser = serial.Serial(
     port ='/dev/ttyS0',
@@ -30,15 +31,6 @@ print("Done")
 print(ser)
 # delay
 #ser.flushInput()
-def pymoniter():
-    pygame.init()
-    # 設定 pygame 視窗標題 (caption)
-    pygame.display.set_caption("RAPS PM Sensor G3")
-    # 設定 pygame 視窗大小 (640 x 480)
-    pygame.display.set_mode((640, 480))
-    # 將 pygame 視窗顯示在螢幕上
-    pygame.display.flip()
-    pass
 
 def main():
     cnt = 0
@@ -71,7 +63,6 @@ def main():
 
 if __name__ == '__main__':
     try:
-        pymoniter()
         main()
     except KeyboardInterrupt:
         if ser != None:
