@@ -10,7 +10,7 @@ pygame.init()
 # 設定 pygame 視窗標題 (caption)
 pygame.display.set_caption("Hello Python")
 # 設定 pygame 視窗大小 (640 x 480)
-pygame.display.set_mode((640, 480))
+pygame.display.set_mode((640, 320))
 # 將 pygame 視窗顯示在螢幕上
 pygame.display.flip()
 # 無窮迴圈
