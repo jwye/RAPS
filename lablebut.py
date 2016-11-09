@@ -7,7 +7,7 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 
 class Demo(BoxLayout):
-	def __init__(self, **kwargs):
+    def __init__(self, **kwargs):
         super(Demo, self).__init__(**kwargs)
         self.count=0
         self.orientation='vertical'
@@ -35,8 +35,9 @@ class Demo(BoxLayout):
 	        self.count+=1
 
 class DemoApp(App):
+    
     def build(self):
-    return Demo()
+        return Demo()
 
 if __name__ == '__main__':
     DemoApp().run()
