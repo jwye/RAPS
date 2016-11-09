@@ -15,11 +15,11 @@ class Demo(BoxLayout):
         s1='Click Me!'
         self.click=Button(text=s1)
         self.click.on_press=self.do_something
-	    self.add_widget(self.click)
+        self.add_widget(self.click)
 
-	    s2='Something happened...'
-	    self.display=Label(text=s2)
-	    self.add_widget(self.display)
+        s2='Something happened...'
+        self.display=Label(text=s2)
+        self.add_widget(self.display)
 
     def do_something(self):
         s1='You have clicked the button.'
@@ -35,7 +35,7 @@ class Demo(BoxLayout):
 	        self.count+=1
 
 class DemoApp(App):
-    
+
     def build(self):
         return Demo()
 
