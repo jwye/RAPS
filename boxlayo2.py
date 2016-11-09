@@ -33,7 +33,7 @@ class NestedLayoutExample(App):
         for i in range(2):
             h_layout = BoxLayout(padding=10)
             for i in range(3):
-                btn = Lable(text="Button #%s" % (i+1),
+                btn = Label(text="Button #%s" % (i+1),
                              background_color=random.choice(colors)
                              )
 
