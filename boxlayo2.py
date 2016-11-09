@@ -7,6 +7,7 @@ import random
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
 
 red = [1,0,0,1]
 green = [0,1,0,1]
@@ -31,8 +32,8 @@ class NestedLayoutExample(App):
 
         for i in range(2):
             h_layout = BoxLayout(padding=10)
-            for i in range(5):
-                btn = Button(text="Button #%s" % (i+1),
+            for i in range(3):
+                btn = Lable(text="Button #%s" % (i+1),
                              background_color=random.choice(colors)
                              )
 
