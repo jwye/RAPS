@@ -24,15 +24,15 @@ class Demo(BoxLayout):
     def do_something(self):
         s1='You have clicked the button.'
         s2='Click Me Again!'
-	    s3='Something happened...'
-	    s4='Click Me!'
-	    if self.count % 2 == 0:
-	        self.display.text=s1
-	        self.click.text=s2
-	    else:
-	        self.display.text=s3
-	        self.click.text=s4
-	        self.count+=1
+        s3='Something happened...'
+        s4='Click Me!'
+        if self.count % 2 == 0:
+            self.display.text=s1
+            self.click.text=s2
+        else:
+            self.display.text=s3
+            self.click.text=s4
+            self.count+=1
 
 class DemoApp(App):
 
