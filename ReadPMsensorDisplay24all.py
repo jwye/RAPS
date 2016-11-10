@@ -68,8 +68,8 @@ def main():
 
             #write csv
             recrtime=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
-            f.write(recrtime+",%d,%d,%d,"+datas2+"\n" % (datas[0], datas[1],datas[2]))
-
+            f.write(recrtime+",%d,%d,%d," % (datas[0], datas[1],datas[2]))
+            f.write(datas2+"\n")
             # clear buffer
             ser.flushInput()
             print("Done")
