@@ -1,5 +1,5 @@
+## -*- coding: utf-8 -*-
 #ref form http://watchword.space/blog/?p=26
-#encoding=utf-8
 #
 
 import sys
@@ -7,6 +7,7 @@ import serial
 import time
 from struct import *
 import RPi.GPIO as GPIO
+import csv
 
 
 # open AMA0(no its old) ttyS0
@@ -32,6 +33,16 @@ print(ser)
 # delay
 #ser.flushInput()
 
+# make rec file
+# make rec file
+recname=time.strftime("PMrec_%Y-%m-%d_%H:%M:%S", time.localtime())
+print(recname)
+f = open('pmdata/'+recname+'.csv', 'w', encoding = 'UTF-8')
+f.write('time,pm1,pm2.5,pm10,fullserwords\n')
+print("Done")
+
+
+
 def main():
     cnt = 0
     while True:
@@ -54,6 +65,12 @@ def main():
             datas2 = unpack('>hh\
             hhhhhhhhhh', tmp2)
             print(datas2)
+
+            #write csv
+            recrtime=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
+            f.write(recrtime+",%d,%d,%d,"+datas2+'\n' \
+            % (datas[0], datas[1],datas[2]))
+
             # clear buffer
             ser.flushInput()
             print("Done")
@@ -66,4 +83,5 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         if ser != None:
+            f.close()
             ser.close()
