@@ -68,14 +68,14 @@ def main():
 
             #write csv
             recrtime=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
-            f.write(recrtime+",%d,%d,%d,\n" % (datas[0], datas[1],datas[2]))
+            f.write(recrtime+",%d,%d,%d,"+datas2+"\n" % (datas[0], datas[1],datas[2]))
 
             # clear buffer
             ser.flushInput()
             print("Done")
 
         # delay
-        time.sleep(0.1)
+        time.sleep(0.5)
 
 if __name__ == '__main__':
     try:
