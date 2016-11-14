@@ -38,7 +38,7 @@ print(ser)
 recname=time.strftime("PMrec_%Y-%m-%d_%H:%M:%S", time.localtime())
 print(recname)
 f = open('pmdata/'+recname+'.csv', 'w', encoding = 'UTF-8')
-f.write('time,pm1,pm2.5,pm10,fullserwords\n')
+f.write('time,pm1,pm2.5,pm10,fpm1,fpm2.5,fpm10\n')
 print("Done")
 
 
@@ -68,7 +68,8 @@ def main():
 
             #write csv
             recrtime=time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
-            f.write(recrtime+",%d,%d,%d\n" % (datas[0], datas[1],datas[2]))
+            f.write(recrtime+",%d,%d,%d" % (datas[0], datas[1],datas[2]))
+            f.write(",%d,%d,%d\n" % (datas[3], datas[4],datas[5]))
             # clear buffer
             ser.flushInput()
             print("Done")
